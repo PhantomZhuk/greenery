@@ -1,0 +1,1636 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin pagecenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin pagebetween($pagebetween: horizontally) {
+    @if $pagebetween ==horizontally {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @else if $pagebetween ==vertically {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@mixin page($x, $y, $z) {
+    display: flex;
+    flex-direction: $z;
+    justify-content: $x;
+    align-items: $y;
+}
+
+.wrap {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Mukta', sans-serif;
+    @include pagebetween($pagebetween: vertically);
+
+    .homePage {
+        width: 100%;
+        height: 100vh;
+        @include pagebetween($pagebetween: horizontally);
+
+        .header {
+            width: 20%;
+            height: 100vh;
+            background-color: #002A32;
+            @include pagebetween($pagebetween: vertically);
+
+            .logo {
+                padding-top: 20px;
+            }
+
+            .nav {
+                width: 100%;
+
+                ul {
+
+                    list-style-type: none;
+
+                    li {
+                        @include pagebetween($pagebetween: vertically);
+                        margin-bottom: 40px;
+
+                        .boxli {
+                            width: 100%;
+                            height: 100px;
+                            padding: 20px 0;
+                            margin-bottom: -10px;
+                            background-color: #3C6C7F;
+                            @include pagebetween($pagebetween: vertically);
+
+                            a {
+                                text-decoration: none;
+                                color: #B6DCFF;
+                                text-align: center;
+                                font-family: 'Open Sans';
+                                font-size: 15px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 23px;
+                                /* 153.333% */
+                                letter-spacing: 0.675px;
+                            }
+                        }
+
+                        a {
+                            text-decoration: none;
+                            color: #B6DCFF;
+                            text-align: center;
+                            font-family: 'Open Sans';
+                            font-size: 15px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 23px;
+                            /* 153.333% */
+                            letter-spacing: 0.675px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .container {
+            width: 80%;
+            height: 100vh;
+
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                margin-left: -20%;
+                z-index: -1;
+            }
+
+            .topblock {
+                width: 100%;
+                height: 5vh;
+                @include pagebetween($pagebetween: horizontally);
+
+                .left {
+                    width: 50%;
+                    height: 5vh;
+                    @include page(flex-start, center, none);
+                    padding-left: 100px;
+
+                    ul {
+                        @include page(space-between, center, none);
+                        list-style-type: none;
+
+                        li {
+                            margin-right: 35px;
+                            margin-top: 30px;
+
+                            a {
+                                text-decoration: none;
+                                color: #3E5860;
+                                font-family: Open Sans;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 26px;
+                                /* 162.5% */
+                                letter-spacing: -0.64px;
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    width: 50%;
+                    height: 5vh;
+                    @include page(flex-end, center, none);
+                    padding-right: 100px;
+
+                    ul {
+                        list-style-type: none;
+                        @include pagebetween($pagebetween: horizontally);
+
+                        li {
+                            margin-top: 30px;
+                            margin-left: 30px;
+                            @include pagebetween($pagebetween: horizontally);
+
+                            a {
+                                text-decoration: none;
+                                color: #3E5860;
+                                font-family: Open Sans;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 26px;
+                                /* 162.5% */
+                                letter-spacing: -0.32px;
+                                margin-left: 5px;
+                            }
+
+                            p {
+                                color: #DD6060;
+                                text-align: right;
+                                font-family: Open Sans;
+                                font-size: 8px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;
+                                letter-spacing: -0.16px;
+                                margin-top: 7px;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .centerblock {
+                width: 100%;
+                height: 85vh;
+                padding: 0 100px;
+                @include pagebetween($pagebetween: horizontally);
+
+
+                .left {
+                    width: 40%;
+                    height: 85vh;
+                    @include pagecenter();
+
+                    .mainleft {
+                        width: 100%;
+                        height: 40vh;
+                        @include page(space-between, flex-start, column);
+
+                        p {
+                            color: #4E6E77;
+                            font-family: Dancing Script;
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 152.5%;
+                            /* 30.5px */
+                            letter-spacing: 0.9px;
+                        }
+
+                        h1 {
+                            color: #264A51;
+                            font-family: Dosis;
+                            font-size: 50px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: 133.5%;
+                            /* 66.75px */
+                            letter-spacing: 2.25px;
+                        }
+
+                        button {
+                            border-radius: 3px;
+                            border: 1.5px solid #43717D;
+                            background: rgba(108, 176, 195, 0.00);
+                            width: 140.052px;
+                            height: 43px;
+                            flex-shrink: 0;
+                            cursor: pointer;
+
+                            p {
+                                color: #264A51;
+                                text-align: center;
+                                font-family: Open Sans;
+                                font-size: 15px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;
+                                letter-spacing: 0.675px;
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    width: 60%;
+                    height: 40vh;
+
+                    svg {
+                        position: relative;
+                        bottom: 30px;
+                        left: 200px;
+                    }
+
+                    p {
+                        width: 150px;
+                        position: relative;
+                        left: 70px;
+                        color: #4E6E77;
+                        font-family: Dosis;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        letter-spacing: 0.72px;
+                    }
+
+                }
+            }
+
+            .bottomblock {
+                width: 100%;
+                height: 10vh;
+                @include page(center, center, none);
+            }
+        }
+    }
+
+    .logoblock {
+        width: 100%;
+        height: 20vh;
+        background-color: #D2E2EE;
+        padding: 0 200px;
+        @include page(space-between, center, none);
+    }
+
+    .secondPage {
+        width: 100%;
+        height: 150vh;
+        background-color: #fff;
+        padding: 100px 0;
+        @include pagebetween($pagebetween: vertically);
+
+        .topblock {
+            width: 100%;
+            height: 10vh;
+            @include pagecenter();
+
+            h2 {
+                color: #264A51;
+                text-align: center;
+                font-family: Dosis;
+                font-size: 46px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 133.5%;
+                /* 61.41px */
+                letter-spacing: 2.07px;
+            }
+        }
+
+        .navblock {
+            width: 100%;
+            height: 15vh;
+            @include pagecenter();
+
+            ul {
+                @include pagebetween($pagebetween: horizontally);
+                list-style-type: none;
+
+                li {
+                    margin-right: 65px;
+
+                    a {
+                        color: #748289;
+                        text-decoration: none;
+                        font-family: Open Sans;
+                        font-size: 17px;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: normal;
+                        letter-spacing: 0.765px;
+                    }
+
+                    .liblpck {
+                        width: 145px;
+                        height: 39px;
+                        flex-shrink: 0;
+                        border-radius: 2px;
+                        @include pagecenter();
+                        border: 3px solid #3E5860;
+                        background: rgba(54, 65, 68, 0.00);
+                    }
+                }
+            }
+        }
+
+        .bottomblock {
+            width: 75%;
+            height: 100vh;
+            @include pagebetween($pagebetween: vertically);
+
+            .blocktop {
+                width: 100%;
+                height: 50vh;
+                margin-bottom: 10px;
+                @include pagebetween($pagebetween: horizontally);
+
+                .box {
+                    width: 30%;
+                    height: 50vh;
+                    @include pagebetween($pagebetween: vertically);
+
+                    .photoblock {
+                        width: 100%;
+                        height: 40vh;
+                        padding: 30px 0 20px 0;
+                        border-radius: 3px;
+                        background: #F1F6F9;
+                        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+                        @include pagebetween($pagebetween: vertically);
+
+                        .nav,
+                        .nav2,
+                        .nav3 {
+                            width: 70%;
+                            height: 5vh;
+                            position: relative;
+                            bottom: 110px;
+                            @include pagebetween($pagebetween: horizontally);
+
+                            .box {
+                                width: 17%;
+                                height: 5vh;
+                                background-color: #71B3C6;
+
+                                @include pagecenter();
+
+                                a {
+                                    text-decoration: none;
+
+                                    i {
+                                        color: #D4DCE2;
+                                    }
+                                }
+                            }
+                        }
+
+                        .nav2 {
+                            bottom: 10px;
+                        }
+
+                        .nav3 {
+                            bottom: 40px;
+                        }
+
+                        .discounts {
+                            padding: 11px 8px;
+                            border-radius: 50%;
+                            background-color: #264A51;
+                            position: relative;
+                            left: 120px;
+                            bottom: 270px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+
+                        }
+
+                        .discounts2 {
+                            padding: 11px 8px;
+                            border-radius: 50%;
+                            background-color: #264A51;
+                            position: relative;
+                            left: 120px;
+                            bottom: 170px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+                        }
+
+                        .discounts3 {
+                            padding: 11px 8px;
+                            border-radius: 50%;
+                            background-color: #264A51;
+                            position: relative;
+                            left: 120px;
+                            bottom: 200px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+                        }
+
+                        .new {
+                            padding: 10px 8px;
+                            border-radius: 50%;
+                            background-color: #71B3C6;
+                            position: relative;
+                            left: 120px;
+                            bottom: 180px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+
+                        }
+
+                        .new3 {
+                            padding: 10px 8px;
+                            border-radius: 50%;
+                            background-color: #71B3C6;
+                            position: relative;
+                            left: 120px;
+                            bottom: 110px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+
+                        }
+
+                        .stoke {
+                            width: 85px;
+                            height: 30px;
+                            flex-shrink: 0;
+                            border-radius: 2px 0px 0px 2px;
+                            background: #264A51;
+                            position: relative;
+                            left: 100px;
+                            bottom: 80px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+                        }
+                    }
+
+                    .text {
+                        width: 100%;
+                        height: 10vh;
+                        padding: 5px 0;
+                        @include pagebetween($pagebetween: vertically);
+
+                        p {
+                            color: #264A51;
+                            text-align: center;
+                            font-family: Mukta;
+                            font-size: 15px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 133.5%;
+                            /* 20.025px */
+                            letter-spacing: 0.675px;
+                        }
+                    }
+                }
+
+            }
+
+            .blockbottom {
+                width: 100%;
+                height: 50vh;
+                @include pagebetween($pagebetween: horizontally);
+
+                .box {
+                    width: 30%;
+                    height: 50vh;
+                    @include pagebetween($pagebetween: vertically);
+
+                    .photoblock {
+                        width: 100%;
+                        height: 40vh;
+                        padding: 30px 0 20px 0;
+                        border-radius: 3px;
+                        background: #F1F6F9;
+                        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+                        @include pagebetween($pagebetween: vertically);
+
+                        .nav4,
+                        .nav5,
+                        .nav6 {
+                            width: 70%;
+                            height: 5vh;
+                            position: relative;
+                            bottom: 80px;
+                            @include pagebetween($pagebetween: horizontally);
+
+                            .box {
+                                width: 17%;
+                                height: 5vh;
+                                background-color: #71B3C6;
+
+                                @include pagecenter();
+
+                                a {
+                                    text-decoration: none;
+
+                                    i {
+                                        color: #D4DCE2;
+                                    }
+                                }
+                            }
+                        }
+
+                        .nav5 {
+                            bottom: 60px;
+                        }
+
+                        .nav6 {
+                            bottom: 40px;
+                        }
+
+                        .discounts4 {
+                            padding: 11px 8px;
+                            border-radius: 50%;
+                            background-color: #264A51;
+                            position: relative;
+                            left: 120px;
+                            bottom: 240px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+
+                        }
+
+                        .discounts5 {
+                            padding: 11px 8px;
+                            border-radius: 50%;
+                            background-color: #264A51;
+                            position: relative;
+                            left: 120px;
+                            bottom: 220px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+                        }
+
+                        .discounts6 {
+                            padding: 11px 8px;
+                            border-radius: 50%;
+                            background-color: #264A51;
+                            position: relative;
+                            left: 120px;
+                            bottom: 200px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+                        }
+
+                        .new4 {
+                            padding: 10px 8px;
+                            border-radius: 50%;
+                            background-color: #71B3C6;
+                            position: relative;
+                            left: 120px;
+                            bottom: 150px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+
+                        }
+
+                        .new5 {
+                            padding: 10px 8px;
+                            border-radius: 50%;
+                            background-color: #71B3C6;
+                            position: relative;
+                            left: 120px;
+                            bottom: 130px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+
+                        }
+
+                        .new6 {
+                            padding: 10px 8px;
+                            border-radius: 50%;
+                            background-color: #71B3C6;
+                            position: relative;
+                            left: 120px;
+                            bottom: 110px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+
+                        }
+
+                        .stoke4 {
+                            width: 85px;
+                            height: 30px;
+                            flex-shrink: 0;
+                            border-radius: 2px 0px 0px 2px;
+                            background: #264A51;
+                            position: relative;
+                            left: 100px;
+                            bottom: 70px;
+                            @include pagecenter();
+
+                            p {
+                                color: #FFF;
+                                font-family: Mukta;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 172.682%;
+                                /* 20.722px */
+                                letter-spacing: 0.54px;
+                            }
+                        }
+                    }
+
+                    .text {
+                        width: 100%;
+                        height: 10vh;
+                        padding: 5px 0;
+                        @include pagebetween($pagebetween: vertically);
+
+                        p {
+                            color: #264A51;
+                            text-align: center;
+                            font-family: Mukta;
+                            font-size: 15px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 133.5%;
+                            /* 20.025px */
+                            letter-spacing: 0.675px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .threePage {
+        width: 100%;
+        height: 100vh;
+        @include pagecenter();
+
+        img {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .text {
+            width: 50%;
+            height: 50vh;
+            margin-top: 120px;
+            margin-right: 400px;
+            padding: 20px 0;
+            @include pagebetween($pagebetween: vertically);
+
+            h2 {
+                color: #F3B705;
+                text-align: center;
+                font-family: Dosis;
+                font-size: 90px;
+                font-style: normal;
+                font-weight: 800;
+                line-height: 0px;
+                /* 0% */
+                letter-spacing: 4.05px;
+                opacity: 0.5;
+            }
+
+            h3 {
+                color: #264A51;
+                text-align: center;
+                font-family: Dosis;
+                font-size: 60px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 133.5%;
+                /* 80.1px */
+                letter-spacing: 2.7px;
+            }
+
+            p {
+                width: 400px;
+                color: #335E74;
+                text-align: center;
+                font-family: Mukta;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 172.682%;
+                /* 25.902px */
+                letter-spacing: 0.675px;
+            }
+
+            button {
+                width: 143px;
+                height: 43px;
+                flex-shrink: 0;
+                border-radius: 3px;
+                border: 2px solid #264A51;
+                background: rgba(108, 176, 195, 0.00);
+                @include pagecenter();
+                cursor: pointer;
+
+                p {
+                    color: #264A51;
+                    text-align: center;
+                    font-family: Open Sans;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    letter-spacing: 0.63px;
+                }
+            }
+        }
+    }
+
+    .fourthPage {
+        width: 100%;
+        min-height: 300vh;
+        padding: 100px 0;
+        @include pagebetween($pagebetween: vertically);
+
+        .topblock {
+            width: 75%;
+            height: 600px;
+            margin-bottom: 50px;
+            @include pagebetween($pagebetween: horizontally);
+
+            .photo {
+                width: 60%;
+                height: 600px;
+                position: relative;
+            }
+
+            .centerblock {
+                position: relative;
+                width: 129px;
+                height: 148px;
+                flex-shrink: 0;
+                border-radius: 3px;
+                background: rgba(113, 179, 198, 0.85);
+                right: 60px;
+                top: 170px;
+                @include pagecenter();
+
+
+                p {
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Dosis;
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 35px;
+                    /* 140% */
+                    letter-spacing: 1.125px;
+                }
+            }
+
+            .text {
+                width: 50%;
+                height: 600px;
+                padding: 120px 0;
+                position: relative;
+                bottom: 70px;
+                @include pagebetween($pagebetween: vertically);
+
+                h2 {
+                    color: #264A51;
+                    text-align: center;
+                    font-family: Dosis;
+                    font-size: 39px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 133.5%;
+                    /* 52.065px */
+                    letter-spacing: 1.755px;
+                }
+
+                p {
+                    padding: 0 10px;
+                    color: #335E74;
+                    text-align: center;
+                    font-family: Mukta;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 172.682%;
+                    /* 25.902px */
+                    letter-spacing: 0.675px;
+                }
+
+                button {
+                    width: 143px;
+                    height: 43px;
+                    flex-shrink: 0;
+                    border-radius: 3px;
+                    border: 2px solid #264A51;
+                    @include pagecenter();
+                    cursor: pointer;
+
+                    p {
+                        color: #264A51;
+                        text-align: center;
+                        font-family: Open Sans;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: 0.63px;
+                    }
+                }
+            }
+        }
+
+        .topcenterblock {
+            width: 75%;
+            height: 416px;
+            margin-bottom: 50px;
+            @include pagebetween($pagebetween: horizontally);
+
+            .text {
+                width: 50%;
+                height: 416px;
+                padding: 100px 0;
+                position: relative;
+                margin-left: -70px;
+                @include pagebetween($pagebetween: vertically);
+
+                h2 {
+                    color: #264A51;
+                    text-align: center;
+                    font-family: Dosis;
+                    font-size: 46px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 133.5%;
+                    /* 61.41px */
+                    letter-spacing: 2.07px;
+                }
+
+                p {
+                    width: 400px;
+                    color: #335E74;
+                    text-align: center;
+                    font-family: Mukta;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 172.682%;
+                    /* 25.902px */
+                    letter-spacing: 0.675px;
+                }
+
+                button {
+                    width: 143px;
+                    height: 43px;
+                    flex-shrink: 0;
+                    border-radius: 3px;
+                    border: 2px solid #264A51;
+                    @include pagecenter();
+                    cursor: pointer;
+
+                    p {
+                        color: #264A51;
+                        text-align: center;
+                        font-family: Open Sans;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: 0.63px;
+                    }
+                }
+            }
+
+            .centerblock {
+                position: relative;
+                width: 129px;
+                height: 148px;
+                flex-shrink: 0;
+                border-radius: 3px;
+                background: rgba(113, 179, 198, 0.85);
+                left: 60px;
+                top: 80px;
+                @include pagecenter();
+
+                p {
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Dosis;
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 35px;
+                    /* 140% */
+                    letter-spacing: 1.125px;
+                }
+            }
+
+            .photo {
+                width: 50%;
+                height: 416px;
+                margin-right: 70px;
+            }
+        }
+
+        .bottomcenterblock {
+            width: 75%;
+            height: 416px;
+            margin-bottom: 50px;
+            @include pagebetween($pagebetween: horizontally);
+
+            .photo {
+                width: 50%;
+                margin-left: -50px;
+                height: 416px;
+            }
+
+            .centerblock {
+                position: relative;
+                width: 129px;
+                height: 148px;
+                flex-shrink: 0;
+                border-radius: 3px;
+                background: rgba(113, 179, 198, 0.85);
+                left: 25px;
+                top: 70px;
+                @include pagecenter();
+
+                p {
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Dosis;
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 35px;
+                    /* 140% */
+                    letter-spacing: 1.125px;
+                }
+            }
+
+            .text {
+                width: 40%;
+                height: 416px;
+                padding: 100px 0;
+                margin-right: -40px;
+                @include pagebetween($pagebetween: vertically);
+
+                h2 {
+                    color: #264A51;
+                    text-align: center;
+                    font-family: Dosis;
+                    font-size: 46px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 133.5%;
+                    /* 61.41px */
+                    letter-spacing: 2.07px;
+                }
+
+                p {
+                    width: 400px;
+                    color: #335E74;
+                    text-align: center;
+                    font-family: Mukta;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 172.682%;
+                    /* 25.902px */
+                    letter-spacing: 0.675px;
+                }
+
+                button {
+                    width: 143px;
+                    height: 43px;
+                    flex-shrink: 0;
+                    border-radius: 3px;
+                    border: 2px solid #264A51;
+                    @include pagecenter();
+                    cursor: pointer;
+
+                    p {
+                        color: #264A51;
+                        text-align: center;
+                        font-family: Open Sans;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: 0.63px;
+                    }
+                }
+            }
+        }
+
+        .bottomeblock {
+            width: 75%;
+            height: 408px;
+            @include pagebetween($pagebetween: horizontally);
+
+            .photo {
+                width: 612px;
+                height: 408px;
+            }
+
+            .text {
+                width: 50%;
+                height: 408px;
+                padding: 100px 0;
+                margin-left: -70px;
+                @include pagebetween($pagebetween: vertically);
+
+                h2 {
+                    color: #264A51;
+                    text-align: center;
+                    font-family: Dosis;
+                    font-size: 46px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 133.5%;
+                    /* 61.41px */
+                    letter-spacing: 2.07px;
+                }
+
+                p {
+                    width: 400px;
+                    color: #335E74;
+                    text-align: center;
+                    font-family: Mukta;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 172.682%;
+                    /* 25.902px */
+                    letter-spacing: 0.675px;
+                }
+
+                button {
+                    width: 143px;
+                    height: 43px;
+                    flex-shrink: 0;
+                    border-radius: 3px;
+                    border: 2px solid #264A51;
+                    @include pagecenter();
+                    cursor: pointer;
+
+                    p {
+                        color: #264A51;
+                        text-align: center;
+                        font-family: Open Sans;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: 0.63px;
+                    }
+                }
+            }
+
+            .centerblock {
+                position: relative;
+                width: 129px;
+                height: 148px;
+                flex-shrink: 0;
+                border-radius: 3px;
+                background: rgba(113, 179, 198, 0.85);
+                left: 65px;
+                top: 80px;
+                @include pagecenter();
+
+                p {
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Dosis;
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 35px;
+                    /* 140% */
+                    letter-spacing: 1.125px;
+                }
+            }
+        }
+    }
+
+    .fifthPage {
+        width: 100%;
+        height: 100vh;
+        @include pagecenter();
+
+        img {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .homeblock {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            background: rgba(93, 155, 201, 0.69);
+            z-index: -1;
+        }
+
+        .text {
+            width: 60%;
+            height: 60vh;
+            padding: 115px 0;
+            @include pagebetween($pagebetween: vertically);
+
+            h2 {
+                color: #264A51;
+                text-align: center;
+                font-family: Dosis;
+                font-size: 46px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 133.5%;
+                /* 61.41px */
+                letter-spacing: 2.07px;
+            }
+
+            p {
+                width: 389px;
+                height: 59px;
+                color: #FFF;
+                text-align: center;
+                font-family: Mukta;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 172.682%;
+                /* 25.902px */
+                letter-spacing: 0.675px;
+
+            }
+
+            input {
+                padding-left: 30px;
+                width: 460px;
+                height: 46px;
+                flex-shrink: 0;
+                border-radius: 50px;
+                border: 0px solid #ACCAE0;
+                background: #DAE5EE;
+                box-shadow: 0px 15px 30px 0px rgba(34, 34, 34, 0.11);
+            }
+
+            button {
+                width: 136px;
+                height: 46px;
+                flex-shrink: 0;
+                border-radius: 50px;
+                background: rgba(38, 74, 81, 0.89);
+                box-shadow: -2px 15px 40px 0px rgba(0, 0, 0, 0.11);
+                border: none;
+                @include pagecenter();
+                position: relative;
+                left: 163px;
+                bottom: 46px;
+                cursor: pointer;
+
+                p {
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Mukta;
+                    font-size: 17px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 172.682%;
+                    /* 29.356px */
+                    letter-spacing: 0.765px;
+                    width: 77px;
+                    height: 26px;
+                }
+            }
+        }
+    }
+
+    .footer {
+        width: 80%;
+        height: 90vh;
+        @include pagebetween($pagebetween: vertically);
+
+        .topblock {
+            width: 100%;
+            height: 85vh;
+            padding: 0 100px;
+            @include pagebetween($pagebetween: horizontally);
+
+            .leftblock {
+                width: 30%;
+                height: 85vh;
+                padding: 200px 0;
+                @include page(space-between, flex-start, column);
+
+                .mesengers {
+                    @include pagebetween($pagebetween: horizontally);
+
+                    i {
+                        margin-right: 40px;
+                        color: #3A5B62;
+                    }
+
+                    .box {
+                        margin-right: 40px;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                        background-color: #3A5B62;
+                        @include pagecenter();
+
+                        .block {
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+                            background-color: #fff;
+                            @include pagecenter();
+                        }
+
+                        i {
+
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+
+            .rightblock {
+                width: 60%;
+                height: 85vh;
+                @include pagebetween($pagebetween: horizontally);
+
+                .left {
+                    width: 20%;
+                    height: 85vh;
+                    @include page(space-between, flex-start, column);
+                    padding: 200px 0;
+
+                    h2 {
+                        color: #264A51;
+                        font-family: Mukta;
+                        font-size: 25px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 81.5px;
+                        /* 326% */
+                        letter-spacing: 1.25px;
+                    }
+
+                    p {
+                        a {
+                            color: #335E74;
+                            font-family: Open Sans;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 30px;
+                            /* 214.286% */
+                            letter-spacing: 0.63px;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .center {
+                    width: 40%;
+                    height: 85vh;
+                    @include page(space-between, flex-start, column);
+                    padding: 200px 0;
+
+                    h2 {
+                        color: #264A51;
+                        font-family: Mukta;
+                        font-size: 25px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 81.5px;
+                        /* 326% */
+                        letter-spacing: 1.25px;
+                    }
+
+                    p {
+                        a {
+                            color: #335E74;
+                            font-family: Open Sans;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 30px;
+                            /* 214.286% */
+                            letter-spacing: 0.63px;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .right {
+                    width: 40%;
+                    height: 85vh;
+                    padding: 200px 0;
+                    @include page(space-between, flex-start, column);
+
+                    h2 {
+                        color: #264A51;
+                        font-family: Mukta;
+                        font-size: 25px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 81.5px;
+                        /* 326% */
+                        letter-spacing: 1.25px;
+                    }
+
+                    .box {
+                        width: 234.786px;
+                        height: 134px;
+                        flex-shrink: 0;
+                        border-radius: 7px;
+                        background: #A0C7EA;
+                        @include pagebetween($pagebetween: vertically);
+
+                        .box1,
+                        .box2,
+                        .box3 {
+                            width: 100%;
+                            height: 33%;
+                            padding: 0 15px;
+                            @include page(space-between, center, none);
+
+                            h6 {
+                                color: #335E74;
+                                font-family: Open Sans;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 24px;
+                                /* 171.429% */
+                                letter-spacing: 0.42px;
+                            }
+
+                            p {
+                                color: #FFF;
+                                font-family: Open Sans;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 24px;
+                                /* 171.429% */
+                                letter-spacing: 0.42px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footerbottomblock {
+        width: 100%;
+        height: 5vh;
+        background-color: #D3E2EF;
+        @include pagecenter();
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    .wrap {
+        .secondPage {
+            .bottomblock {
+                .blocktop {
+                    .box {
+                        .photoblock {
+
+                            .discounts,
+                            .discounts2,
+                            .discounts3,
+                            .new,
+                            .new3 {
+                                left: 100px;
+                            }
+
+                            .stoke {
+                                width: 70px;
+                                left: 90px;
+
+                                p {
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .blockbottom {
+                    .box {
+                        .photoblock {
+
+                            .discounts4,
+                            .discounts5,
+                            .discounts6,
+                            .new4,
+                            .new5,
+                            .new6 {
+                                left: 100px;
+                            }
+
+                            .stoke4 {
+                                width: 70px;
+                                left: 90px;
+
+                                p {
+
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .fourthPage {
+            padding: 50px 0;
+
+            .topblock {
+
+                .centerblock {
+                    right: 25px;
+                    top: 170px;
+                }
+
+                .text {
+                    width: 300px;
+                    padding: 100px 0;
+                }
+            }
+
+            .topcenterblock {
+                margin-left: -100px;
+            }
+
+            .bottomeblock {
+                .photo {
+                    margin-left: -50px;
+                }
+
+                .centerblock {
+                    left: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px){
+    
+}
